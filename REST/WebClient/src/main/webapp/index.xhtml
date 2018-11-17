@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <f:view contentType="text/html">
+    <h:head>
+        <f:facet name="first">
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+        <title>Tipo Estado Reserva Cliente</title>
+        </f:facet>
+    </h:head>
+    <h:body>
+        <h2>Buscar Tipo Estado Reserva:</h2>  
+     <h:outputLabel for="name" value="Nombre"/>
+     <p:inputText id="name" value="#{tipoEstadoReservaCliente.filtro}" label="name"
+                                  required="true" readonly="false"/>  
+     <h3>Lista de Tipo Estado Reserva encontradas</h3>
+      <p:dataTable id="tbl" value="#{tipoEstadoReservaManagedBean.modelo}"
+                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+                     var="reg"
+                     lazy="true"
+                     paginator="true"
+                     rows="5"
+                     selectionMode="single"
+                     selection="#{tipoEstadoReservaManagedBean.registro}"
+                     disabledSelection="#{tipoEstadoReservaManagedBean.seleccions}">
+                    
+                    <p:ajax update=":frm_detalle:formulario :frm_detalle:btns" listener="#{tipoEstadoReservaManagedBean.cambiarSeleccion()}" event="rowSelect"/>
+                  
+                    <p:column>
+                            <f:facet name="header">
+                                    <h:outputText value="ID"/>
+                            </f:facet>		
+                        <h:outputText value="#{reg.idTipoEstadoReserva}"/>
+                    </p:column>
+                    <p:column>
+                            <f:facet name="header">
+                                    <h:outputText value="Nombre"/>
+                            </f:facet>		
+                        <h:outputText value="#{reg.nombre}"/>
+                    </p:column>
+                    <p:column>
+                            <f:facet name="header">
+                                    <h:outputText value="Activo"/>
+                            </f:facet>		
+                            <h:outputText value="#{reg.activo?'Si':'NO'}"/>
+                    </p:column>
+                    <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Indica Aprobacion"/>
+                            </f:facet>
+                        <h:outputText value="#{reg.indicaAprobacion?'Si':'No'}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Observaciones"/>
+                        </f:facet>
+                        <h:outputText value="#{reg.observaciones}"/>
+                    </p:column>
+             </p:dataTable>
+
+    </h:body>
+    </f:view>
+</html>

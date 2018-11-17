@@ -1,0 +1,9 @@
+sv\edu\uesocc\ingenieria\prn335_2018\web\rest\server\AbstractFacade.class
+sv\edu\uesocc\ingenieria\prn335_2018\datos\acceso\AbstractFacade.class
+sv\edu\uesocc\ingenieria\prn335_2018\datos\acceso\TipoEstadoReservaFacadeLocal.class
+sv\edu\uesocc\ingenieria\prn335_2018\web\controladores\AbstractManagedBean.class
+sv\edu\uesocc\ingenieria\prn335_2018\datos\acceso\AbstracInterface.class
+sv\edu\uesocc\ingenieria\prn335_2018\web\controladores\TipoEstadoReservaBean.class
+sv\edu\uesocc\ingenieria\prn335_2018\web\rest\server\ApplicationConfig.class
+sv\edu\uesocc\ingenieria\prn335_2018\datos\acceso\TipoEstadoReservaFacade.class
+sv\edu\uesocc\ingenieria\prn335_2018\web\rest\server\TipoEstadoReservaResource.class
